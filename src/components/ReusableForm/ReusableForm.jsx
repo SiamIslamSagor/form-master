@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const ReusableForm = ({
   formTitle,
   handleSubmit,
@@ -28,6 +29,13 @@ const ReusableForm = ({
       </form>
     </div>
   );
+};
+
+ReusableForm.propTypes = {
+  formTitle: PropTypes.string,
+  submitBtnText: PropTypes.string,
+  handleSubmit: PropTypes.func,
+  children: PropTypes.element,
 };
 
 export default ReusableForm;

@@ -3,11 +3,12 @@ import useInputState from "../../hooks/useInputState";
 const HookForm = () => {
   //   const [name, handleNameChange] = useInputState("Sagor");
 
-  const emailState = useInputState("siam@gmail.comm");
-  console.log(emailState);
+  const emailState = useInputState("");
+
+  const passwordState = useInputState("");
 
   const handleSubmit = e => {
-    console.log("form data", emailState.value);
+    console.log("form data", emailState.value, passwordState.value);
     e.preventDefault();
   };
   return (
@@ -22,7 +23,7 @@ const HookForm = () => {
         <br />
         <input {...emailState} type="email" name="email" id="" />
         <br />
-        <input type="password" name="password" id="" />
+        <input {...passwordState} type="password" name="password" id="" />
         <br />
         <input type="submit" value="Submit" />
       </form>
